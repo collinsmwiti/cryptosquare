@@ -1,6 +1,7 @@
+//Back-end part to enhance calculation for enhancing cryptography//
 var encrypt = function(message) {
   var cleanedMessage = message.match(/[A-Za-z0-9]/g);
-  var messageLength  = cleanedMessage.length;
+  var messageLength = cleanedMessage.length;
   var output = '';
   var outputArray = [];
   var root = parseInt(Math.ceil(Math.sqrt(messageLength)));
@@ -19,7 +20,7 @@ var encrypt = function(message) {
   }
   rectangle.push(row);
 
-  for(var i = 0; i < rectangle[0].length; i++) {
+  for (var i = 0; i < rectangle[0].length; i++) {
     rectangle.forEach(function(row) {
       if (row !== undefined) {
         if (row[i] !== undefined) {
@@ -38,11 +39,12 @@ var encrypt = function(message) {
   return outputArray.join(' ');
 }
 
+//Front-end part to enhance linking of the index form and the js back-end part//
 $(document).ready(function() {
 
   $(document).foundation();
 
-  $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
+  $(document).on('open.fndtn.reveal', '[data-reveal]', function() {
     var modal = $(this);
     console.log(modal);
   });
